@@ -87,7 +87,8 @@ class Gzip {
   }
 }
 
-module.exports = Gzip
-
-// you can just include it in a script tag and forget about it
-window.Gzip = Gzip
+if(typeof module != "undefined"){
+  module.exports = { Gzip }
+} else {
+  window.Gzip = Gzip
+}
